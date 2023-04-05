@@ -1,0 +1,39 @@
+.Add_Product_Container{
+    width: 25%;
+    margin: auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 18px 3px rgb(217, 216, 216);
+}
+
+.Add_Product_Container div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .7rem;
+} 
+.Add_Product_Container input{
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+}
+select{
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    /* font-size: 16px; */
+}
+
+
+.Add_Product_Container div > label{
+    font-size: 15px;
+    color: red;
+    margin-top: .3rem;
+} 
