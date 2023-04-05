@@ -1,2 +1,37 @@
 # React-with-Recoil
- - This is my first Practics project with react recoil
+ - First you need to clone this project using ```https://github.com/Shubham-Kumar-Mca/React-with-Recoil.git``` then
+ - How to run the project
+    - You have to run vite project using
+        - npm run dev
+    - then tou have to run server(db.json) using
+        - npm run server
+
+ # Project Foldder Structure is :- 
+    - src folder
+        - App.jsx
+        - index.css
+        - main.jsx
+        - Component folder
+            - Filtering folder
+                - Filter.jsx
+                - Filter.css
+            - Navbar folder
+                - Navbar.jsx
+                - Navbar.css
+            - Pages folder
+                - Home Folder
+                    - Home.jsx
+                    - Home.css
+                - AddProduct Folder
+                    - AddProduct.jsx
+                    - AddProduct.css
+                - EditProduct Folder
+                    - EditProduct.jsx
+                    - EditProduct.css
+                - AllRoutes.jsx
+            - SingleProduct Folder
+                -SingleProduct.jsx
+                -SingleProduct.css
+        - Recoil folder
+            -productRecoil.jsx
+    - db.json
