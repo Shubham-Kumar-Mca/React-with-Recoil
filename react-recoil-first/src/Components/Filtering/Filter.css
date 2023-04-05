@@ -1,0 +1,36 @@
+.filter-container{
+    padding: 0 30px;
+}
+
+
+.price-container{
+    margin-bottom: 1rem;
+}
+
+.price-container > h3{
+    padding: 10px 0;
+}
+
+.price-section > div, .singleBrand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+.price-section > div >input{
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+.price-section > div >label{
+    cursor: pointer;
+}
+.brand-section{
+    height: 230px;
+    margin-top: 1rem;
+    overflow-y: auto;
+    font-size: 14px;
+}
+.singleBrand > label, .singleBrand > input{
+    cursor: pointer;
+}
