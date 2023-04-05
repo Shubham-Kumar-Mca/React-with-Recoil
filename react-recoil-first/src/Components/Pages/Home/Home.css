@@ -1,0 +1,28 @@
+.container{
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.filtering-section{
+    width: 20%;
+    margin-top: 2rem;
+    box-shadow: 1px 1px 5px 0px #7b7b7b;
+    height: 550px;
+    border-radius: 10px;
+    position: fixed;
+}
+.filtering-section > h2{
+    padding: 10px 30px;
+    background-color: rgb(247, 247, 247);
+    color: #333;
+    border-radius: 10px 10px 0 0;
+}
+.All-Product-show{
+    width: 80%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-left: 300px;
+}
