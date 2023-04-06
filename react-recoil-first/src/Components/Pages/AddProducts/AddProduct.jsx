@@ -5,21 +5,6 @@ import axios from 'axios';
 import { useRecoilState } from 'recoil';
 import { initialState } from '../../../Recoil/productRecoil';
 
-// const initialState = {
-//     title: "",
-//     price: "",
-//     rating: "",
-//     brand: "",
-//     thumbnail: "",
-//     errors: {
-//         title: "",
-//         price: "",
-//         rating: "",
-//         brand: "",
-//         thumbnail: "",
-//     }
-// }
-
 
 const AddProduct = () => {
     const Brands = ["Apple", "HP", "Lenovo", "Samsung", "OPPO", "Huawei", "Microsoft Surface", "Infinix", "HP Pavilion", "Impression of Acqua Di Gio", "Royal_Mirage", "Fog Scent Xpressio", "Al Munakh", "Lord - Al-Rehab", "L'Oreal Paris", "Hemani Tea", "Dermive", "ROREC White Rice", "Fair & Clear", "Saaf & Khaas", "Bake Parlor Big", "Baking Food Items", "fauji", "Dry Rose", "Boho Decor", "Flying Wooden", "LED Lights", "luxury palace", "Golden",];
