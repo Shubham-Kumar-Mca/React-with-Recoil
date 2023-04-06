@@ -6,7 +6,7 @@
       "description": "An apple mobile which is nothing like apple",
       "price": 550,
       "discountPercentage": 12.96,
-      "rating": 4.69,
+      "rating": 4.09,
       "stock": 94,
       "brand": "Apple",
       "category": "smartphones",
@@ -525,8 +525,7 @@
       "stock": 7,
       "brand": "luxury palace",
       "category": "home-decoration",
-      "thumbnail": "https://i.dummyjson.com/data/products/29/thumbnail.webp",
-      
+      "thumbnail": "https://i.dummyjson.com/data/products/29/thumbnail.webp"
     },
     {
       "id": 30,
@@ -547,6 +546,22 @@
       "rating": 4.6,
       "brand": "Samsung",
       "thumbnail": "https://m.media-amazon.com/images/I/712f4xV-Z3L._AC_UY218_.jpg"
+    },
+    {
+      "id": "19UTsSsilgxH0i7tTTV9o",
+      "title": " HP Probook x360 11 G2 EE Multi-Touch 2-in-1",
+      "price": 21990,
+      "rating": 3.7,
+      "brand": "OPPO",
+      "thumbnail": "https://m.media-amazon.com/images/I/41HjNEeVZEL._AC_UY218_.jpg"
+    },
+    {
+      "id": "rXoS7KOQXP5AW_ICLqwHq",
+      "title": " HP Ultra Beautiful Laptop ",
+      "price": 20990,
+      "rating": 5,
+      "brand": "HP",
+      "thumbnail": "https://m.media-amazon.com/images/I/41QR-3ZvqHL._AC_UY218_.jpg"
     }
   ]
 }
