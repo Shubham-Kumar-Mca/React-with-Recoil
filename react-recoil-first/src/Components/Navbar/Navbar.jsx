@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div className='Navbar-container'>
       <div className='logoTitle'>
-        <Link to="/">Sasta E-commerce</Link>
+        <Link to="/">CRUD</Link>
       </div>
       <div className='search-container'>
         <div className='SearchBox'>
