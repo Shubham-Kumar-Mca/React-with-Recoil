@@ -8,7 +8,6 @@ const Navbar = () => {
   const [textSearchFunctionality, setTextSearchFunctionality] = useRecoilState(searchFunctionality);
   const searchProductsData = useRecoilValue(searchProduct);
 
-  console.log("searchProductsData is", searchProductsData);
 
   const handelClicking = (title) =>{
     setTextSearchFunctionality(title);
