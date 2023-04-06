@@ -1,36 +1,17 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import "./Filter.css"
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { InitialProduct, filterdData } from '../../Recoil/productRecoil';
+import { useRecoilState } from 'recoil';
+import { productBrand, productPrice } from '../../Recoil/productRecoil';
 import { useSearchParams } from 'react-router-dom';
 
 const Filter = () => {
-  const allBrand = ["Apple", "Samsung", "OPPO", "Huawei", "Microsoft Surface", "Infinix", "HP Pavilion", "Impression of Acqua Di Gio", "Royal_Mirage", "Fog Scent Xpressio", "Al Munakh", "Lord - Al-Rehab", "L'Oreal Paris", "Hemani Tea", "Dermive", "ROREC White Rice", "Fair & Clear", "Saaf & Khaas", "Bake Parlor Big", "Baking Food Items", "fauji", "Dry Rose", "Boho Decor", "Flying Wooden", "LED Lights", "luxury palace", "Golden",];
-  const products = useRecoilValue(InitialProduct);
-  const [productData, setproductsData] = useRecoilState(filterdData);
+  const allBrand = ["Apple","HP" , "Lenovo", "Samsung", "OPPO", "Huawei", "Microsoft Surface", "Infinix", "HP Pavilion", "Impression of Acqua Di Gio", "Royal_Mirage", "Fog Scent Xpressio", "Al Munakh", "Lord - Al-Rehab", "L'Oreal Paris", "Hemani Tea", "Dermive", "ROREC White Rice", "Fair & Clear", "Saaf & Khaas", "Bake Parlor Big", "Baking Food Items", "fauji", "Dry Rose", "Boho Decor", "Flying Wooden", "LED Lights", "luxury palace", "Golden",];
   const [serachParams, setSearchParams] = useSearchParams();
   const initialBrand = serachParams.getAll("brand");
   const initialPrice = serachParams.get("price");
-  const [price, setPrice] = useState(initialPrice || "all");
-  const [brand, setBrand] = useState(initialBrand || []);
+  const [price, setPrice] = useRecoilState(productPrice);
+  const [brand, setBrand] = useRecoilState(productBrand);
 
-
-  const sortByPrice = useCallback(() => {
-   
-    const filterByPrice = products.filter((product) => {
-      if (price === "under500") {
-        return product.price < 500;
-      } else if (price === "between500to1000") {
-        return product.price >= 500 && product.price <= 1000;
-      } else if (price === "over1000") {
-        return product.price > 1000;
-      }else{
-        return product
-      }
-    })
-
-    setproductsData(filterByPrice);
-  }, [price, products, setproductsData]);
 
 
   const handelInputChange = (e) => {
@@ -43,17 +24,11 @@ const Filter = () => {
     setBrand(newBrand);
   }
 
-  const filterByCheckBox = () =>{
-    if(brand.length === 0){
-      setproductsData(productData)
-    }
-    setproductsData(products.filter(product=>brand.includes(product.brand)))
-  }
-
 
   useEffect(() => {
-    sortByPrice();
-  }, [price, sortByPrice]);
+    setPrice(initialPrice)
+    setBrand(initialBrand)
+  }, []);
 
   useEffect(() => {
     const params = {};
@@ -61,11 +36,6 @@ const Filter = () => {
     price && (params.price = price);
     setSearchParams(params)
   }, [brand, price, setSearchParams])
-
-  useEffect(()=>{
-    filterByCheckBox()
-  },[brand])
-
 
   return (
     <div className='filter-container'>
