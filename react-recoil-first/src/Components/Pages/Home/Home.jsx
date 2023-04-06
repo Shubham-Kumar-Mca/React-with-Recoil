@@ -4,14 +4,16 @@ import "./Home.css"
 import SingleProduct from '../../SingleProduct/SingleProduct';
 import Filter from '../../Filtering/Filter';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { InitialProduct, filterdData } from '../../../Recoil/productRecoil';
+import { InitialProduct, filterByPrice, searchProduct } from '../../../Recoil/productRecoil';
 import { useLocation, useSearchParams } from 'react-router-dom';
 
 const Home = () => {
     const [products, setProducts] = useRecoilState(InitialProduct);
-    const filteredData = useRecoilValue(filterdData);
+    const filteredByPriceData = useRecoilValue(filterByPrice);
     const [searchParams] = useSearchParams();
     const location = useLocation();
+    const searchProductsData = useRecoilValue(searchProduct);
+
 
     const handelApi = () => {
         axios.get("http://localhost:3030/products", {
@@ -25,20 +27,18 @@ const Home = () => {
 
 
     const handelDeleteProduct = (id) => {
-        axios.delete(`http://localhost:3030/products/${id}`).then(res => { 
+        axios.delete(`http://localhost:3030/products/${id}`).then(res => {
             handelApi();
-        }).catch(err=>{
+        }).catch(err => {
             console.log(err);
         })
     }
-
 
     useEffect(() => {
         if (location || products.length === 0) {
             handelApi()
         }
-    }, [products.length, location])
-
+    }, [products.length, location]);
 
     return (
         <div className='container'>
@@ -47,13 +47,13 @@ const Home = () => {
                 <Filter />
             </div>
             <div className='All-Product-show'>
-                {filteredData.length === 0 ? <>{products?.map((product, index) => (
+                {filteredByPriceData.length === 0  ? <>{products?.map((product, index) => (
                     <SingleProduct key={index} {...product} handelDeleteProduct={handelDeleteProduct} />
-                ))}</> : <>{filteredData?.map((product, index) => (
+                ))}</> : searchProductsData.length > 0 ?<>{searchProductsData.map((searchProductData, index)=>(
+                    <SingleProduct key={index} {...searchProductData} handelDeleteProduct={handelDeleteProduct}/>
+                ))}</> :<>{filteredByPriceData?.map((product, index) => (
                     <SingleProduct key={index} {...product} handelDeleteProduct={handelDeleteProduct} />
-                ))}</>
-
-                }
+                ))}</>}
             </div>
         </div>
     )
