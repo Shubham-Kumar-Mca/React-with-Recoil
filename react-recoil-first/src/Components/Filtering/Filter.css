@@ -26,11 +26,12 @@
     cursor: pointer;
 }
 .brand-section{
-    height: 230px;
+    height: 275px;
     margin-top: 1rem;
     overflow-y: auto;
-    font-size: 14px;
+    font-size: 13px;
 }
 .singleBrand > label, .singleBrand > input{
     cursor: pointer;
+    outline: none;
 }
