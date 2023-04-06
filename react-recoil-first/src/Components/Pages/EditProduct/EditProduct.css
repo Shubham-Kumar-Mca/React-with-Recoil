@@ -11,11 +11,14 @@
 }
 
 .editProduct-container  input{
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     box-sizing: border-box;
     outline: none;
     margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 16px;
 }
 
 input[type="submit"]{
