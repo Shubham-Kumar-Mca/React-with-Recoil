@@ -3,7 +3,7 @@
  - How to run the project
     - You have to run vite project using
         - npm run dev
-    - then tou have to run server(db.json) using
+    - then you have to run server(db.json) using
         - npm run server
 
  # Project Foldder Structure is :- 
